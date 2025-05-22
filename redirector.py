@@ -15,7 +15,7 @@ def vpn_redirect(_id, name):
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
-    <a href="aza://{{_id}}&name={{name}}">сюда</a>
+    <a href="aza://id={{_id}}&name={{name}}">сюда</a>
 </head>
 <body>
     <h2>Подключение к VPN</h2>
