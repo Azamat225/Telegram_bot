@@ -9,13 +9,14 @@ def download_apk():
 
 @app.route('/vpn/<uuid:_id>/<name>')
 def vpn_redirect(_id, name):
+    deep_link = f"aza://152.114.192.9/{_id}?name={name}"
     return f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
-    <a href="aza://id={{_id}}&name={{name}}">сюда</a>
+    <meta http-equiv="refresh" content="0; url={deep_link}" />
 </head>
 <body>
     <h2>Подключение к VPN</h2>
@@ -26,6 +27,7 @@ def vpn_redirect(_id, name):
     <p id="fallback" style="display:none;">
     <a href="/download/apk"><button>⬇️ Скачать APK</button></a><br>
     Или нажмите <a href="aza://{{_id}}&name={{name}}">сюда</a>, чтобы открыть приложение.
+    <a href="{deep_link}>сюда</a>
 </p>
 
     <p style="margin-top: 20px; font-size: 0.9em;">
