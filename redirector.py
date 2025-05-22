@@ -15,9 +15,7 @@ def vpn_redirect(_id, name):
 <head>
     <meta charset="UTF-8">
     <title>Redirecting...</title>
-    <script type="text/javascript">
-        window.location.href = "aza://{_id}&name={name}";
-    </script>
+    <a href="aza://{{_id}}&name={{name}}">сюда</a>
 </head>
 <body>
     <h2>Подключение к VPN</h2>
@@ -25,9 +23,10 @@ def vpn_redirect(_id, name):
 
     <button onclick="window.location.href='aza://{_id}&name={name}'">Открыть приложение</button>
     <br><br>
-    <a href="/download/apk" download>
-        <button>⬇️ Скачать APK</button>
-    </a>
+    <p id="fallback" style="display:none;">
+    <a href="/download/apk"><button>⬇️ Скачать APK</button></a><br>
+    Или нажмите <a href="aza://{{_id}}&name={{name}}">сюда</a>, чтобы открыть приложение.
+</p>
 
     <p style="margin-top: 20px; font-size: 0.9em;">
         Убедитесь, что у вас разрешена установка приложений из неизвестных источников.
